@@ -1,0 +1,22 @@
+- templateName: 会员卡模板
+  children:
+      - templateName: 计次卡
+        templatePath: TimeCard.xls
+      - templateName: 会员卡
+        templatePath: VipCard.xls
+- templateName: 商品模板
+  children:
+      - templateName: 保养类目
+        children:
+          - templateName: 机油类目
+            templatePath: oil.xls
+      - templateName: 轮胎类目
+        children:
+          - templateName: 轮胎配件
+            templatePath: oil.xls
+
+
+
+
+
+
