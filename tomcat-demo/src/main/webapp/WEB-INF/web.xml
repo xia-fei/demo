@@ -8,8 +8,24 @@
         <servlet-name>KeepConnectionServlet</servlet-name>
         <servlet-class>servlet.KeepConnectionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CrashTestServlet</servlet-name>
+        <servlet-class>servlet.CrashTestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CrashTestServlet2</servlet-name>
+        <servlet-class>servlet.CrashTestServlet2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>KeepConnectionServlet</servlet-name>
         <url-pattern>/keepConnection</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrashTestServlet</servlet-name>
+        <url-pattern>/crash</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrashTestServlet2</servlet-name>
+        <url-pattern>/crash2</url-pattern>
     </servlet-mapping>
 </web-app>
