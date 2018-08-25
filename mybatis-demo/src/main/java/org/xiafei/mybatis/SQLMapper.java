@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.xiafei.mybatis.bean.Cat;
 
 @Mapper
 public interface SQLMapper {
@@ -14,4 +15,7 @@ public interface SQLMapper {
 
     @Update("update test_1 set name='xxx' where id=#{id}")
     int update(@Param("id") Integer id);
+
+    @Update("update test_1 set name='xxx' where id=#{age}")
+    int updateCat(Cat cat);
 }

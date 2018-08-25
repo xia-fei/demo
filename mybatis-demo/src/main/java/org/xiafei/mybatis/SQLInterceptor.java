@@ -18,12 +18,8 @@ public class SQLInterceptor implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         MappedStatement mappedStatement= (MappedStatement) invocation.getArgs()[0];
-        SqlCommandType sqlCommandType=mappedStatement.getSqlCommandType();
-        SqlSource sqlSource=mappedStatement.getSqlSource();
-        BoundSql boundSql=sqlSource.getBoundSql(mappedStatement.getParameterMap());
-
         MapperMethod.ParamMap paramMap= (MapperMethod.ParamMap) invocation.getArgs()[1];
-
+        
         return invocation.proceed();
     }
 
