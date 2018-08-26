@@ -56,7 +56,7 @@ public class ThreadLocalTest {
     }
 
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
         final InheritableThreadLocal<String> inheritableThreadLocal=new InheritableThreadLocal<>();
         inheritableThreadLocal.set("1");
         System.out.println("1 "+Thread.currentThread().getName()+inheritableThreadLocal.get());
@@ -67,10 +67,21 @@ public class ThreadLocalTest {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        System.out.println("3 "+Thread.currentThread().getName()+inheritableThreadLocal.get());
+                        while (true) {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            System.out.println("3 "+Thread.currentThread().getName()+inheritableThreadLocal.get());
+                        }
                     }
                 }).start();
             }
         }).start();
+        Thread.sleep(2000);
+        inheritableThreadLocal.set("hello");
+        System.out.println("修改");
+        Thread.sleep(30000000);
     }
 }

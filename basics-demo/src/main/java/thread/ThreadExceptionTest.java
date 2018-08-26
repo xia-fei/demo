@@ -12,9 +12,16 @@ public class ThreadExceptionTest {
                 throw new RuntimeException("this is exception");
             }
         };
-        thread.setUncaughtExceptionHandler(null);
+        thread.setUncaughtExceptionHandler(new ExceptionHandler());
         thread.start();
 
         System.out.println("thread start");
+    }
+}
+class ExceptionHandler implements Thread.UncaughtExceptionHandler {
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        System.out.println("UncaughtExceptionHandler"+e.getMessage());
     }
 }
