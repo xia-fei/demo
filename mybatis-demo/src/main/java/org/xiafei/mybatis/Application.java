@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import javax.sql.DataSource;
 
 /**
  * @author 夏飞
@@ -21,8 +24,12 @@ public class Application {
     public String stringBean(){
         return "hello,word";
     }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource){
+        return new JdbcTemplate(dataSource);
+    }
     public static void main(String[] args) {
         ConfigurableApplicationContext configurableApplicationContext=SpringApplication.run(Application.class, args);
-
     }
 }

@@ -37,4 +37,9 @@ public class ApplicationTests {
         cat.setName("花花");
         System.out.println(SQLMapper.updateCat(cat));
     }
+
+    @Test
+    public void testJdbcTemplate(){
+
+    }
 }
