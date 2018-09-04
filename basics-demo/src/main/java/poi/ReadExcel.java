@@ -16,7 +16,7 @@ import java.io.InputStream;
 
 
 public class ReadExcel {
-    private String filePath = WriteExcel.class.getResource("/").getFile() + "workbook-read.xls";
+    private String filePath = WriteExcel.class.getResource("/").getFile() + "计次卡_VR.xls";
     private Workbook wb =WorkbookFactory.create(new File(filePath));;
     private Sheet sheet=wb.getSheetAt(0);
 

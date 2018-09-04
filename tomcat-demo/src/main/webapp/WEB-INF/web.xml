@@ -21,12 +21,21 @@
         <servlet-class>servlet.DownloadServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>TestServlet</servlet-name>
+        <servlet-name>CookieServlet</servlet-name>
         <servlet-class>servlet.CookieServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>servlet.TestServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/TestServlet</url-pattern>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CookieServlet</servlet-name>
+        <url-pattern>/CookieServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DownloadServlet</servlet-name>
