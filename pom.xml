@@ -12,6 +12,7 @@
         <module>tomcat-demo</module>
         <module>async-upload</module>
         <module>basics-demo</module>
+        <module>spring-boot/spring-boot-tomcat</module>
     </modules>
 
 
